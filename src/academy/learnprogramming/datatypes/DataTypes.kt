@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
     val onVacation = DummyClass().isVacationTime(vacationTime)
 
     //ARRAYS------------------------------------------------------------------------------------------------------------
-    val names = arrayOf("Ada", "Bartek", "Celina", "Donald")
+    val names = arrayOf("Ada", "Bart", "Celina", "Donald")
     val longs1 = arrayOf(1L, 2L, 3L)
     val longs2 = arrayOf<Long>(1, 2, 3)
     println(longs1 === longs2)  // false
@@ -32,5 +32,21 @@ fun main(args: Array<String>) {
 
     val myIntArray = intArrayOf(1, 2, 3)
     DummyClass().printNumbers(myIntArray)
+
+    //NULL REFERENCES---------------------------------------------------------------------------------------------------
+    var str: String? = null  // nullable
+    println(str?.toUpperCase())  // null check
+
+    val str2 = str ?: "default"  // elvis operator
+
+    val sth: Any = arrayOf(1, 2, 3)
+    val str3: String? = sth as? String  // null
+
+    str = "not null"
+    str!!.toUpperCase()  // if we're sure it will never be null
+
+    str?.let { print(it) }  // if str != null, perform operations in {}
+
+    val nullableInts = arrayOfNulls<Int?>(3)
 
 }
