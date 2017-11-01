@@ -1,5 +1,8 @@
 package academy.learnprogramming.declarations
 
+typealias EmployeeSet = Set<Employee>
+
+
 fun main(args: Array<String>) {
     val number: Int = 25  // val = immutable
     var number2: Int  // var = mutable
@@ -18,7 +21,15 @@ fun main(args: Array<String>) {
     }
 
     // number = "nana"  // error
+
+    val employees: EmployeeSet
+
+    val names = arrayListOf("John", "Jane", "Mike")
+    println(names[1])
+
+
 }
+
 
 class Employee(var name: String, val id: Int) {
 
