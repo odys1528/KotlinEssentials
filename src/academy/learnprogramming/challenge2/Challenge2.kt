@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     // Now declare an array of type nullable Ints and initialize it with the values 5-200 with step=5.
     val intArray = Array<Int?>(40) { i -> (i + 1) * 5 }
 
-    // You have to call a Java method with the following signatue from Kotlin:
+    // You have to call a Java method with the following signature from Kotlin:
     // public void method1(char[] charArray). Declare an array that you could pass to the method and initialize it with
     // the values 'a', 'b', and 'c'.
     val charArray = charArrayOf('a', 'b', 'c')
