@@ -71,6 +71,13 @@ fun main(args: Array<String>) {
     println("${numerator/denominator}")
     println("${employee1.name}")
 
+    //RAW STRINGS-------------------------------------------------------------------------------------------------------
+    val filePath = """C:\somedir\somedir2"""
+    val rhyme = """nana
+                *nana
+                *nana""".trimMargin("*")  // default |
+    print(rhyme)
+
 }
 
 
