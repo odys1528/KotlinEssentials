@@ -60,6 +60,17 @@ fun main(args: Array<String>) {
         println(sth.name)
     }
 
+    //STRING TEMPLATES--------------------------------------------------------------------------------------------------
+    println(employee1)
+
+    val change = 4.22
+    println("\$$change, $$change")
+
+    val numerator = 10.99
+    val denominator = 20.00
+    println("${numerator/denominator}")
+    println("${employee1.name}")
+
 }
 
 
@@ -71,5 +82,10 @@ class Employee(var name: String, val id: Int) {
         }
         return false
     }
+
+    override fun toString(): String {
+        return "Employee(name=$name, id=$id)"
+    }
+
 
 }
