@@ -4,6 +4,7 @@ typealias EmployeeSet = Set<Employee>
 
 
 fun main(args: Array<String>) {
+    //DECLARATIONS------------------------------------------------------------------------------------------------------
     val number: Int = 25  // val = immutable
     var number2: Int  // var = mutable
 
@@ -27,7 +28,7 @@ fun main(args: Array<String>) {
     val names = arrayListOf("John", "Jane", "Mike")
     // println(names[1])
 
-
+    //EQUALS------------------------------------------------------------------------------------------------------------
     val employeeOne = Employee("Mary", 1)
     val employeeTwo = Employee("John", 2)
     val employeeThree = Employee("John", 2)
@@ -46,6 +47,18 @@ fun main(args: Array<String>) {
     println(employeeTwo != employeeThree)  // false
     println(employeeTwo !== employeeThree)  // true
 
+    //BIT OPERATORS-----------------------------------------------------------------------------------------------------
+    val x = 0x00101110
+    val y = 0x00110010
+
+    //println(x or y)  // there are no | and & operators
+
+    //CASTING-----------------------------------------------------------------------------------------------------------
+    var sth: Any = employeeFour
+    if(sth is Employee) {
+        // val newEmployee = sth as Employee  // unnecessary
+        println(sth.name)
+    }
 
 }
 
