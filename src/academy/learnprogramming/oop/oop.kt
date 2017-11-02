@@ -91,7 +91,7 @@ fun printColors(vararg cars: Car) {
 
 
 // in functions type is needed
-fun labelMultiply(operand1: Int, operand2: Int, label: String): String {
+/*inline */fun labelMultiply(operand1: Int, operand2: Int, label: String): String {
     return ("$label ${operand1 * operand2}")
 }
 
