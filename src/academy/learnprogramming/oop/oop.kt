@@ -1,5 +1,7 @@
 package academy.learnprogramming.oop
 
+import java.io.File.separator
+
 val MY_CONSTANT = 100
 
 // top-level - public and final by default
@@ -18,6 +20,13 @@ fun main(args: Array<String>) {
 
     val car = Car("blue", "Toyota", 2015)
     val car2 = car.copy(year = 2016, color = "green")
+
+    val manyCars = arrayOf(car, car2)
+    // printColors(manyCars)  // type mismatch
+    printColors(*manyCars)  // * is a spread operator
+
+    val moreCars = arrayOf(*manyCars, car, car2)
+
 }
 
 
@@ -70,3 +79,25 @@ data class Car(val color: String, val model: String, val year: Int) {
     // can't be abstract, sealed or inner
 
 }
+
+
+fun printColors(vararg cars: Car) {
+    // vararg = undefined number of parameters, only one vararg keyword in function
+    for (car in cars) {
+        print(car.color + separator)
+    }
+}
+
+
+// in functions type is needed
+fun labelMultiply(operand1: Int, operand2: Int, label: String): String {
+    return ("$label ${operand1 * operand2}")
+}
+
+
+fun labelAdd(operand1: Int, operand2: Int, label: String): String =
+    "$label ${operand1 + operand2}"
+
+
+// void = returns Unit (unnecessary)
+fun nana() = println("nana")
