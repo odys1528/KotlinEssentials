@@ -1,7 +1,5 @@
 package academy.learnprogramming.oop
 
-import java.io.File.separator
-
 val MY_CONSTANT = 100
 
 // top-level - public and final by default
@@ -26,6 +24,8 @@ fun main(args: Array<String>) {
     printColors(*manyCars)  // * is a spread operator
 
     val moreCars = arrayOf(*manyCars, car, car2)
+
+    println("nana".upperFirstAndLast())
 
 }
 
@@ -84,8 +84,9 @@ data class Car(val color: String, val model: String, val year: Int) {
 fun printColors(vararg cars: Car) {
     // vararg = undefined number of parameters, only one vararg keyword in function
     for (car in cars) {
-        print(car.color + separator)
+        print(car.color + " ")
     }
+    println()
 }
 
 
@@ -101,3 +102,10 @@ fun labelAdd(operand1: Int, operand2: Int, label: String): String =
 
 // void = returns Unit (unnecessary)
 fun nana() = println("nana")
+
+
+fun String.upperFirstAndLast(): String {  // extension
+    val upperFirst = substring(0, 1).toUpperCase() + substring(1)
+    return upperFirst.substring(0, upperFirst.length - 1) +
+            upperFirst.substring(upperFirst.length - 1, upperFirst.length).toUpperCase()
+}
