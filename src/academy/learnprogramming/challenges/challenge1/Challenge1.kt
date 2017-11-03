@@ -1,4 +1,4 @@
-package academy.learnprogramming.challenge1
+package academy.learnprogramming.challenges.challenge1
 
 fun main(args: Array<String>) {
 
