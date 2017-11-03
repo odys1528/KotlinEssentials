@@ -18,6 +18,15 @@ fun main(args: Array<String>) {
     // val someClass3 = SomeClass()  // error
 
 
+    var nana = 0
+    // anonymous object, not a singleton
+    wantsInterface(object: SomeInterface {
+        override fun mustImplement(num: Int): String {
+            nana++
+            return "This is from mustImplement: $num"
+        }
+    })
+
 }
 
 
@@ -65,4 +74,13 @@ class SomeClass private constructor(val someString: String) {
         }
     }
 
+}
+
+
+interface SomeInterface {
+    fun mustImplement(num: Int): String
+}
+
+fun wantsInterface(i: SomeInterface) {
+    println("Printing from wantsInterface ${i.mustImplement(5)}")
 }
