@@ -30,6 +30,14 @@ fun main(args: Array<String>) {
 }
 
 
+enum class Department(val fullName: String, val numEmployee: Int) {
+    HR("Human Resources", 5), IT("Information Technology", 10),
+    ACC("Accounting", 3), SALES("Sales", 20);  // semicolon!
+
+    fun getDepartmentInfo() = "The $fullName department has $numEmployee employees."
+}
+
+
 // object class = static class
 // no constructors
 object CompanyCommunications {
