@@ -2,8 +2,11 @@ package academy.learnprogramming.oop
 
 
 fun main(args: Array<String>) {
-    val laserPrinter = LaserPriter("Brother 1234")
+    val laserPrinter = LaserPrinter("Brother 1234", 15)
     laserPrinter.printModel()
+
+    SomethingElse("nana")
+
 }
 
 
@@ -17,11 +20,45 @@ abstract class Printer(val modelName: String) {
 }
 
 
-class LaserPriter(modelName: String): Printer(modelName) {
+// override also means open
+open class LaserPrinter(modelName: String, ppm: Int): Printer(modelName) {
 
     // constructor(): super()
 
-    override fun printModel() = println("The model name of this laser printer is $modelName")
+    final override fun printModel() = println("The model name of this laser printer is $modelName")
     override fun bestSellingPrice(): Double = 129.99
 
 }
+
+
+class SpecialLaserPrinter(modelName: String, ppm: Int): LaserPrinter(modelName, ppm) {
+
+    // override fun printModel() = println("nana")  // printModel is final, cannot be overridden
+}
+// calling a super secondary constructor if there's a prime constructor? impossible
+// every constructor has to delegate to the primary constructor
+
+
+open class Something/*(val x: Int)*/ {
+
+    val someProperty: String
+
+    constructor(someParameter: String) {
+        someProperty = someParameter
+        println("parent's constructor")
+    }
+
+}
+
+
+class SomethingElse: Something {
+
+    constructor(someOtherParameter: String): super(someOtherParameter) {
+        println("child's constructor")
+    }
+
+}
+
+
+// data classes are closed
+// open data class DataClass(val number: Int) {}
