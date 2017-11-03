@@ -39,15 +39,23 @@ class SpecialLaserPrinter(modelName: String, ppm: Int): LaserPrinter(modelName, 
 // every constructor has to delegate to the primary constructor
 
 
-open class Something/*(val x: Int)*/ {
+open class Something/*(val x: Int)*/: MySubInterface {
 
     val someProperty: String
+    override val number: Int = 25
 
     constructor(someParameter: String) {
         someProperty = someParameter
         println("parent's constructor")
     }
 
+    override fun myFunction(str: String): String {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun mySubFunction(num: Int): String {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }
 
 
@@ -62,3 +70,22 @@ class SomethingElse: Something {
 
 // data classes are closed
 // open data class DataClass(val number: Int) {}
+
+interface MyInterface {
+
+    val number: Int
+    // val number2: Int = 50  // error (initialization)
+    val number2: Int
+        get() = number * 100
+    // interfaces don't have backing field
+
+    fun myFunction(str: String): String
+
+}
+
+
+interface MySubInterface: MyInterface {
+
+    fun mySubFunction(num: Int): String
+
+}
