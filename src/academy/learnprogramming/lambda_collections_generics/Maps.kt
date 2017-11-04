@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
     val (c, m, y) = Car("green", "toyota", 2015)
 
     println(immutableMap.map { it.value.color })
-    println(immutableMap.filter { it.value.model == "ford" }.map { it.value.color })
+    println(immutableMap.filter { it.value.model == "ford"; it.value.year > 2010 }.map { it.value.color })
     println(immutableMap.all { it.value.model == "ford" })
     println(immutableMap.any { it.value.year > 2014 })
     println(immutableMap.count { it.value.year > 2014 })
