@@ -1,4 +1,4 @@
-package academy.learnprogramming.loops_if_when_try_catch
+package academy.learnprogramming.expressions
 
 
 fun main(args: Array<String>) {
