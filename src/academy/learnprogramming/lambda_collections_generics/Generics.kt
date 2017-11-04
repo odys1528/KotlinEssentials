@@ -15,9 +15,18 @@ fun main(args: Array<String>) {
     convertToInt(listOf(1f, -2f, 3.14f))
     append(StringBuilder("string 1"), StringBuilder("string2"))
 
-    val listAny: Any = listOf("nana")
+    val listAny: List<Any> = listOf("nana", 1, 2)
     println(listAny is List<*>)  // erasure
 
+    println(getElementsOfType<Int>(listAny))
+
+}
+
+
+inline fun <reified T> getElementsOfType(list: List<Any>): List<T> {  // inline and reified because during runtime type is unknown
+    var newList: MutableList<T> = mutableListOf()
+    list.forEach { if (it is T) newList.add(it) }
+    return newList
 }
 
 
