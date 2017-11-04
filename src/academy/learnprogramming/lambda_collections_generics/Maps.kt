@@ -28,12 +28,11 @@ fun main(args: Array<String>) {
 }
 
 
-class Car(val color: String, val model: String, val year: Int) {
+data class Car(val color: String, val model: String, val year: Int) {
     // component functions
     // in data classes it's already done
-    operator fun component1() = color
-    operator fun component2() = model
-    operator fun component3() = year
-
+//    operator fun component1() = color
+//    operator fun component2() = model
+//    operator fun component3() = year
 
 }
