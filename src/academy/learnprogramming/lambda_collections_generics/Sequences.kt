@@ -18,6 +18,4 @@ fun main(args: Array<String>) {
             .map { println("mapping $it"); it.toUpperCase() }  // til there intermediate, returns seq
             .toList()  // now terminal
 
-
-
 }
