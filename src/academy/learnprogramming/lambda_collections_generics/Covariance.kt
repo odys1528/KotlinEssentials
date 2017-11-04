@@ -15,9 +15,9 @@ fun convertToInt(collection: MutableList<Number>) {
 }
 
 
-open class Flower
+open class Flower(val name: String = "Flower")
 
-class Rose: Flower()
+class Rose: Flower("Rose")
 
 //class Garden<T: Flower>  // invariant class
 class Garden<out T: Flower> { // covariant class = immutable
