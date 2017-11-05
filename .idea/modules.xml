@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CallKotlinFromJava/CallKotlinFromJava.iml" filepath="$PROJECT_DIR$/CallKotlinFromJava/CallKotlinFromJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/KotlinEssentials.iml" filepath="$PROJECT_DIR$/KotlinEssentials.iml" />
     </modules>
   </component>
